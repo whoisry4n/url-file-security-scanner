@@ -1,90 +1,69 @@
-URL & File Security Scanner🛡️
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/61462934-634f-4181-811b-16fa62f3c896" /># URL & File Security Scanner 🛡️
 
-Một web application mạnh mẽ giúp kiểm tra URL hoặc file có chứa mã độc, phishing hay rủi ro bảo mật không, sử dụng VirusTotal API.
-Dự án được viết bằng Python Flask, hỗ trợ lưu lịch sử scan bằng SQLite.
+**Web application kiểm tra URL và file có chứa mã độc, phishing hoặc rủi ro bảo mật không, sử dụng VirusTotal API.**
 
-Tính năng chính:
+Dự án được xây dựng bằng **Python + Flask**, giao diện dark theme phong cách cybersecurity hiện đại, hỗ trợ lưu lịch sử scan bằng SQLite.
 
-🔗 Kiểm tra URL – Dán link để xem có bị đánh dấu là malicious/phishing không.
+## Tính năng chính
 
-📁 Upload file để scan – Hỗ trợ mọi loại file (tối đa 32MB), file chỉ lưu tạm và tự động xóa sau khi scan.
+- 🔗 **Kiểm tra URL** nhanh chóng – phát hiện malicious/phishing.
+- 📁 **Upload file để scan** – hỗ trợ mọi định dạng (tối đa 32MB), file chỉ lưu tạm và tự động xóa ngay sau khi scan.
+- 📊 **Lịch sử scan** – xem lại đầy đủ các lần kiểm tra trước đó (thời gian, loại, mục tiêu, kết quả, số lượng engine phát hiện).
+- 🎨 **Giao diện đẹp mắt** – dark neon theme, hiệu ứng glow, responsive trên cả desktop và mobile.
+- 🔒 **An toàn & riêng tư** – không lưu file lâu dài, database chỉ chứa metadata.
 
-📊 Lịch sử scan – Xem lại tất cả các lần kiểm tra trước đó (thời gian, loại, mục tiêu, kết quả, số lượng phát hiện).
+## Ảnh minh họa
 
-🎨 Giao diện dễ nhìn, dễ sử dụng.
+![Trang chính]<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1d2d56bc-7b2a-494c-879f-96e7f1551af6" />
+  
+*Giao diện trang chủ với form scan URL/file*
 
-🛡️ An toàn & riêng tư – Không lưu file lâu dài, database chỉ lưu metadata.
+![Lịch sử scan]<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c5b05bc3-a747-4542-b049-7d26a8e4d9a4" />
 
-*Demo (chạy local)
+*Trang lịch sử scan với bảng chi tiết và phân màu an toàn/rủi ro*
 
--Trang chính
-<img width="1555" height="806" alt="{8297EE18-78EE-4F53-BA2C-6776E4F81B94}" src="https://github.com/user-attachments/assets/505d59d3-f94a-4088-ab29-a1313c7182e2" />
+## Yêu cầu hệ thống
 
--Lịch sử scan
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/389edfa4-924b-415b-aa91-7cc49ae9cc1a" />
+- Python 3.8 trở lên
+- Kết nối Internet (để gọi VirusTotal API)
 
-*Yêu cầu hệ thống:
+## Hướng dẫn cài đặt & chạy
 
--Python 3.8 trở lên
+1. **Clone repository**
+   ```bash
+   git clone https://github.com/whoisry4n/url-file-security-scanner.git
+   cd url-file-security-scanner
+2. **Cài đặt các thư viện cần thiết: pip install flask requests werkzeug**
+3. **Lấy API key từ VirusTotal**
+   Đăng ký tài khoản miễn phí tại: https://www.virustotal.com/gui/join-us
+   Vào phần My API key để copy key.
+4. **Cấu hình API key**
+   Mở file app.py, tìm dòng:PythonVIRUSTOTAL_API_KEY = 'YOUR_API_KEY_HERE'Thay 'YOUR_API_KEY_HERE' bằng API key thật của bạn.
+5. **Chạy ứng dụng: python app.py**
+6. **Truy cập
+   Mở trình duyệt và vào địa chỉ: http://127.0.0.1:5000**
 
--Kết nối Internet (để gọi VirusTotal API)
-
--Cài đặt & chạy dự án:
-
--git clone https://github.com/whoisry4n/url-file-security-scanner.git
-
--cd url-file-security-scanner
-
--pip install flask requests werkzeug
-
--Lấy API key từ VirusTotal
-
--Đăng ký miễn phí tại: https://www.virustotal.com/gui/join-us
-
--Vào My API key để copy key.
-
--Thay API key vào code
-
--Mở file app.py, tìm dòng: PythonVIRUSTOTAL_API_KEY = 'YOUR_API_KEY_HERE'Thay 'YOUR_API_KEY_HERE' bằng key thật của bạn.
-
--python app.py
-
--Mở trình duyệt và vào: http://127.0.0.1:5000
-
-*Cấu trúc dự án
-
-url-file-security-scanner/
-
+## Cấu trúc dự án
+texturl-file-security-scanner/
 ├── app.py                  # Code chính Flask
-
-├── scans.db                # Database SQLite (tự tạo khi chạy lần đầu)
-
+├── scans.db                # Database SQLite (tự động tạo khi chạy lần đầu)
 ├── uploads/                # Thư mục tạm lưu file upload (tự xóa sau scan)
-
 ├── templates/
-
-│   ├── index.html          # Trang chính (scan URL/file)
-
+│   ├── index.html          # Trang chính (scan URL & file)
 │   └── history.html        # Trang lịch sử scan
-
 ├── .gitignore
-
 └── README.md               # Tài liệu này
 
-*Lưu ý khi sử dụng
+## Lưu ý khi sử dụng
 
--API key miễn phí của VirusTotal có giới hạn (500 request/ngày, 4 request/phút cho file).
+API key miễn phí của VirusTotal giới hạn ~500 request/ngày và 4 request/phút đối với scan file.
+Kích thước file upload tối đa 32MB (giới hạn của API public).
+Ứng dụng chạy local nên hoàn toàn riêng tư và an toàn.
 
--File upload tối đa 32MB (giới hạn API public).
+## Tác giả
 
--Ứng dụng chạy local nên hoàn toàn riêng tư.
+Nhóm SV an ninh mạng.
+Dự án thực hiện theo yêu cầu môn học CS-447.
 
-*Tác giả:
-
--Nhóm SV an ninh mạng.
-
--Dự án thực hiện theo yêu cầu môn CDIO - CS 447.
-
-*License
-
--MIT License.
+## License
+Dự án sử dụng MIT License – bạn được tự do sử dụng, chỉnh sửa và chia sẻ.
