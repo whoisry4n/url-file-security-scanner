@@ -1,4 +1,4 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/61462934-634f-4181-811b-16fa62f3c896" /># URL & File Security Scanner 🛡️
+# URL & File Security Scanner 🛡️
 
 **Web application kiểm tra URL và file có chứa mã độc, phishing hoặc rủi ro bảo mật không, sử dụng VirusTotal API.**
 
@@ -37,26 +37,26 @@ Dự án được xây dựng bằng **Python + Flask**, giao diện dark theme 
    ```bash
    pipinstall flask requests werkzeug
 3. **Lấy API key từ VirusTotal**
-   Đăng ký tài khoản miễn phí tại: https://www.virustotal.com/gui/join-us
-   Vào phần My API key để copy key.
+   # Đăng ký tài khoản miễn phí tại: https://www.virustotal.com/gui/join-us
+   # Vào phần My API key để copy key.
 4. **Cấu hình API key**
-   Mở file app.py, tìm dòng:PythonVIRUSTOTAL_API_KEY = 'YOUR_API_KEY_HERE'Thay 'YOUR_API_KEY_HERE' bằng API key thật của bạn.
+   # Mở file app.py, tìm dòng:PythonVIRUSTOTAL_API_KEY = 'YOUR_API_KEY_HERE'Thay 'YOUR_API_KEY_HERE' bằng API key thật của bạn.
 5. **Chạy ứng dụng**
    ```bash
    python app.py
-7. **Truy cập
-   Mở trình duyệt và vào địa chỉ: http://127.0.0.1:5000**
+7. **Truy cập**
+   # Mở trình duyệt và vào địa chỉ: http://127.0.0.1:5000
 
 ## Cấu trúc dự án
 texturl-file-security-scanner/
-├── app.py                  # Code chính Flask
-├── scans.db                # Database SQLite (tự động tạo khi chạy lần đầu)
-├── uploads/                # Thư mục tạm lưu file upload (tự xóa sau scan)
-├── templates/
-│   ├── index.html          # Trang chính (scan URL & file)
-│   └── history.html        # Trang lịch sử scan
-├── .gitignore
-└── README.md               # Tài liệu này
+# ├── app.py                  # Code chính Flask
+# ├── scans.db                # Database SQLite (tự động tạo khi chạy lần đầu)
+# ├── uploads/                # Thư mục tạm lưu file upload (tự xóa sau scan)
+# ├── templates/
+# │   ├── index.html          # Trang chính (scan URL & file)
+# │   └── history.html        # Trang lịch sử scan
+# ├── .gitignore
+# └── README.md               # Tài liệu này
 
 ## Lưu ý khi sử dụng
 
@@ -66,8 +66,8 @@ Kích thước file upload tối đa 32MB (giới hạn của API public).
 
 ## Tác giả
 
-Nhóm SV an ninh mạng.
-Dự án thực hiện theo yêu cầu môn học CS-447.
+# Nhóm SV an ninh mạng.
+# Dự án thực hiện theo yêu cầu môn học CS-447.
 
 ## License
-Dự án sử dụng MIT License – bạn được tự do sử dụng, chỉnh sửa và chia sẻ.
+# Dự án sử dụng MIT License – bạn được tự do sử dụng, chỉnh sửa và chia sẻ.
