@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>URL & File Security Scanner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0d1117;     /* Đen xám tối */
+            --bg-secondary: #161b22;   /* Card background */
+            --text-primary: #c9d1d9;   /* Chữ chính */
+            --text-secondary: #8b949e; /* Chữ phụ */
+            --accent-safe: #00ff9d;    /* Xanh neon an toàn */
+            --accent-danger: #ff0040;  /* Đỏ nguy hiểm */
+            --accent-blue: #00bfff;    /* Xanh dương neon */
+            --border: #30363d;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            color: var(--text-primary);
+            font-family: 'Roboto Mono', monospace;
+            text-align: center;
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-safe));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6),
+                        0 0 20px rgba(0, 191, 255, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="file"] {
+            background: #0d1117;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 16px 20px;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        }
+
+        input[type="text"]:focus, input[type="file"]:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
+        }
+
+        button {
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-safe));
+            color: #000;
+            font-weight: bold;
+            padding: 16px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.4);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(0, 255, 157, 0.6);
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            animation: fadeIn 0.8s ease;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .safe {
+            background: rgba(0, 255, 157, 0.1);
+            color: var(--accent-safe);
+            border: 1px solid var(--accent-safe);
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
+        }
+
+        .danger {
+            background: rgba(255, 0, 64, 0.1);
+            color: var(--accent-danger);
+            border: 1px solid var(--accent-danger);
+            box-shadow: 0 0 20px rgba(255, 0, 64, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            margin-top: 50px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .history-link {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--bg-primary);
+            border: 1px solid var(--accent-blue);
+            border-radius: 8px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .history-link:hover {
+            background: var(--accent-blue);
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>URL & File Security Scanner</h1>
+        <p class="subtitle">Kiểm tra nhanh URL hoặc file có chứa mã độc, phishing hay rủi ro không (giới hạn file 32MB)</p>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="text" name="url" placeholder="Dán link URL vào đây (ví dụ: https://example.com)">
+            <p style="color: var(--text-secondary); margin: 10px 0;">HOẶC</p>
+            <input type="file" name="file" accept="*/*">
+            <button type="submit">SCAN NGAY</button>
+        </form>
+
+        {% if result %}
+            <div class="result {% if 'an toàn' in result|lower %}safe{% else %}danger{% endif %}">
+                {{ result }}
+            </div>
+        {% endif %}
+
+        <a href="/history" class="history-link">Xem lịch sử scan</a>
+    </div>
+
+    <footer>Powered by VirusTotal API • App cá nhân</footer>
+</body>
+</html>

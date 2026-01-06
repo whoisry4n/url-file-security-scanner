@@ -1,0 +1,5 @@
+scans.db
+uploads/
+__pycache__/
+*.pyc
+.vscode/
