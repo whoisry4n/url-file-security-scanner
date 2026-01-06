@@ -33,14 +33,18 @@ Dự án được xây dựng bằng **Python + Flask**, giao diện dark theme 
    ```bash
    git clone https://github.com/whoisry4n/url-file-security-scanner.git
    cd url-file-security-scanner
-2. **Cài đặt các thư viện cần thiết: pip install flask requests werkzeug**
+2. **Cài đặt các thư viện cần thiết**
+   ```bash
+   pipinstall flask requests werkzeug
 3. **Lấy API key từ VirusTotal**
    Đăng ký tài khoản miễn phí tại: https://www.virustotal.com/gui/join-us
    Vào phần My API key để copy key.
 4. **Cấu hình API key**
    Mở file app.py, tìm dòng:PythonVIRUSTOTAL_API_KEY = 'YOUR_API_KEY_HERE'Thay 'YOUR_API_KEY_HERE' bằng API key thật của bạn.
-5. **Chạy ứng dụng: python app.py**
-6. **Truy cập
+5. **Chạy ứng dụng**
+   ```bash
+   python app.py
+7. **Truy cập
    Mở trình duyệt và vào địa chỉ: http://127.0.0.1:5000**
 
 ## Cấu trúc dự án
