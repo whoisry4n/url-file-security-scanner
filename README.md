@@ -14,11 +14,11 @@ Dự án được xây dựng bằng **Python + Flask**, giao diện dark theme 
 
 ## Ảnh minh họa
 
-![Trang chính]<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1d2d56bc-7b2a-494c-879f-96e7f1551af6" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1d2d56bc-7b2a-494c-879f-96e7f1551af6" />
   
 *Giao diện trang chủ với form scan URL/file*
 
-![Lịch sử scan]<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c5b05bc3-a747-4542-b049-7d26a8e4d9a4" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c5b05bc3-a747-4542-b049-7d26a8e4d9a4" />
 
 *Trang lịch sử scan với bảng chi tiết và phân màu an toàn/rủi ro*
 
@@ -48,15 +48,15 @@ Dự án được xây dựng bằng **Python + Flask**, giao diện dark theme 
    # Mở trình duyệt và vào địa chỉ: http://127.0.0.1:5000
 
 ## Cấu trúc dự án
-texturl-file-security-scanner/
-# ├── app.py                  # Code chính Flask
-# ├── scans.db                # Database SQLite (tự động tạo khi chạy lần đầu)
-# ├── uploads/                # Thư mục tạm lưu file upload (tự xóa sau scan)
-# ├── templates/
-# │   ├── index.html          # Trang chính (scan URL & file)
-# │   └── history.html        # Trang lịch sử scan
-# ├── .gitignore
-# └── README.md               # Tài liệu này
+url-file-security-scanner/
+├── app.py                  # Code chính Flask
+├── scans.db                # Database SQLite (tự động tạo khi chạy lần đầu)
+├── uploads/                # Thư mục tạm lưu file upload (tự xóa sau scan)
+├── templates/
+│   ├── index.html          # Trang chính (scan URL & file)
+│   └── history.html        # Trang lịch sử scan
+├── .gitignore
+└── README.md               # Tài liệu này
 
 ## Lưu ý khi sử dụng
 
@@ -66,8 +66,8 @@ Kích thước file upload tối đa 32MB (giới hạn của API public).
 
 ## Tác giả
 
-# Nhóm SV an ninh mạng.
-# Dự án thực hiện theo yêu cầu môn học CS-447.
+Nhóm SV an ninh mạng.
+Dự án thực hiện theo yêu cầu môn học CS-447.
 
 ## License
-# Dự án sử dụng MIT License – bạn được tự do sử dụng, chỉnh sửa và chia sẻ.
+Dự án sử dụng MIT License – bạn được tự do sử dụng, chỉnh sửa và chia sẻ.
