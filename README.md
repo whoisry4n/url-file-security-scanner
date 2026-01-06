@@ -2,14 +2,14 @@
 
 **Web application kiểm tra URL và file có chứa mã độc, phishing hoặc rủi ro bảo mật không, sử dụng VirusTotal API.**
 
-Dự án được xây dựng bằng **Python + Flask**, giao diện dark theme phong cách cybersecurity hiện đại, hỗ trợ lưu lịch sử scan bằng SQLite.
+Dự án được xây dựng bằng **Python + Flask**, giao diện dễ nhìn & sử dụng, hỗ trợ lưu lịch sử scan bằng SQLite.
 
 ## Tính năng chính
 
 - 🔗 **Kiểm tra URL** nhanh chóng – phát hiện malicious/phishing.
 - 📁 **Upload file để scan** – hỗ trợ mọi định dạng (tối đa 32MB), file chỉ lưu tạm và tự động xóa ngay sau khi scan.
 - 📊 **Lịch sử scan** – xem lại đầy đủ các lần kiểm tra trước đó (thời gian, loại, mục tiêu, kết quả, số lượng engine phát hiện).
-- 🎨 **Giao diện đẹp mắt** – dark neon theme, hiệu ứng glow, responsive trên cả desktop và mobile.
+- 🎨 **Giao diện đẹp mắt** – thân thiện với người dùng.
 - 🔒 **An toàn & riêng tư** – không lưu file lâu dài, database chỉ chứa metadata.
 
 ## Ảnh minh họa
@@ -35,7 +35,8 @@ Dự án được xây dựng bằng **Python + Flask**, giao diện dark theme 
    cd url-file-security-scanner
 2. **Cài đặt các thư viện cần thiết**
    ```bash
-   pipinstall flask requests werkzeug
+   pip install flask requests
+   pip install flask werkzeug
 3. **Lấy API key từ VirusTotal**
    - Đăng ký tài khoản miễn phí tại: https://www.virustotal.com/gui/join-us
    - Vào phần My API key để copy key.
@@ -48,15 +49,7 @@ Dự án được xây dựng bằng **Python + Flask**, giao diện dark theme 
    - Mở trình duyệt và vào địa chỉ: http://127.0.0.1:5000
 
 ## Cấu trúc dự án
-url-file-security-scanner/
-├── app.py                  # Code chính Flask
-├── scans.db                # Database SQLite (tự động tạo khi chạy lần đầu)
-├── uploads/                # Thư mục tạm lưu file upload (tự xóa sau scan)
-├── templates/
-│   ├── index.html          # Trang chính (scan URL & file)
-│   └── history.html        # Trang lịch sử scan
-├── .gitignore
-└── README.md               # Tài liệu này
+<img width="661" height="199" alt="{41184144-589B-4100-A7D0-89B225ACF372}" src="https://github.com/user-attachments/assets/feec1d8b-a4d1-4b18-9c11-44cb5febe193" />
 
 ## Lưu ý khi sử dụng
 
