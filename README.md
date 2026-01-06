@@ -1,4 +1,4 @@
-🛡️URL & File Security Scanner🛡️
+URL & File Security Scanner🛡️
 
 Một web application mạnh mẽ giúp kiểm tra URL hoặc file có chứa mã độc, phishing hay rủi ro bảo mật không, sử dụng VirusTotal API.
 Dự án được viết bằng Python Flask, hỗ trợ lưu lịch sử scan bằng SQLite.
@@ -15,43 +15,43 @@ Tính năng chính:
 
 🛡️ An toàn & riêng tư – Không lưu file lâu dài, database chỉ lưu metadata.
 
-Demo (chạy local)
+*Demo (chạy local)
 
-Trang chính
+-Trang chính
 <img width="1555" height="806" alt="{8297EE18-78EE-4F53-BA2C-6776E4F81B94}" src="https://github.com/user-attachments/assets/505d59d3-f94a-4088-ab29-a1313c7182e2" />
 
-Lịch sử scan
+-Lịch sử scan
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/389edfa4-924b-415b-aa91-7cc49ae9cc1a" />
 
-Yêu cầu hệ thống:
+*Yêu cầu hệ thống:
 
-Python 3.8 trở lên
+-Python 3.8 trở lên
 
-Kết nối Internet (để gọi VirusTotal API)
+-Kết nối Internet (để gọi VirusTotal API)
 
-Cài đặt & chạy dự án:
+-Cài đặt & chạy dự án:
 
-git clone https://github.com/whoisry4n/url-file-security-scanner.git
+-git clone https://github.com/whoisry4n/url-file-security-scanner.git
 
-cd url-file-security-scanner
+-cd url-file-security-scanner
 
-pip install flask requests werkzeug
+-pip install flask requests werkzeug
 
-Lấy API key từ VirusTotal
+-Lấy API key từ VirusTotal
 
-Đăng ký miễn phí tại: https://www.virustotal.com/gui/join-us
+-Đăng ký miễn phí tại: https://www.virustotal.com/gui/join-us
 
-Vào My API key để copy key.
+-Vào My API key để copy key.
 
-Thay API key vào code
+-Thay API key vào code
 
-Mở file app.py, tìm dòng: PythonVIRUSTOTAL_API_KEY = 'YOUR_API_KEY_HERE'Thay 'YOUR_API_KEY_HERE' bằng key thật của bạn.
+-Mở file app.py, tìm dòng: PythonVIRUSTOTAL_API_KEY = 'YOUR_API_KEY_HERE'Thay 'YOUR_API_KEY_HERE' bằng key thật của bạn.
 
-python app.py
+-python app.py
 
-Mở trình duyệt và vào: http://127.0.0.1:5000
+-Mở trình duyệt và vào: http://127.0.0.1:5000
 
-Cấu trúc dự án
+*Cấu trúc dự án
 
 url-file-security-scanner/
 
@@ -73,18 +73,18 @@ url-file-security-scanner/
 
 *Lưu ý khi sử dụng
 
-API key miễn phí của VirusTotal có giới hạn (500 request/ngày, 4 request/phút cho file).
+-API key miễn phí của VirusTotal có giới hạn (500 request/ngày, 4 request/phút cho file).
 
-File upload tối đa 32MB (giới hạn API public).
+-File upload tối đa 32MB (giới hạn API public).
 
-Ứng dụng chạy local nên hoàn toàn riêng tư.
+-Ứng dụng chạy local nên hoàn toàn riêng tư.
 
-Tác giả:
+*Tác giả:
 
-Nhóm SV an ninh mạng.
+-Nhóm SV an ninh mạng.
 
-Dự án thực hiện theo yêu cầu môn CDIO - CS 447.
+-Dự án thực hiện theo yêu cầu môn CDIO - CS 447.
 
-License
+*License
 
-MIT License.
+-MIT License.
