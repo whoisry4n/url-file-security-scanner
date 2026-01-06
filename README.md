@@ -31,7 +31,7 @@
 1. **Clone repository**
    ```bash
    git clone https://github.com/whoisry4n/url-file-security-scanner.git
-   cd url-file-security-scanner
+   cd url-checker
 2. **Cài đặt các thư viện cần thiết**
    ```bash
    pip install flask requests
