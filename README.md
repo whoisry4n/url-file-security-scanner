@@ -1,4 +1,5 @@
-🛡️URL & File Security Scanner
+🛡️URL & File Security Scanner🛡️
+
 Một web application mạnh mẽ giúp kiểm tra URL hoặc file có chứa mã độc, phishing hay rủi ro bảo mật không, sử dụng VirusTotal API.
 Dự án được viết bằng Python Flask, hỗ trợ lưu lịch sử scan bằng SQLite.
 
@@ -53,13 +54,21 @@ Mở trình duyệt và vào: http://127.0.0.1:5000
 Cấu trúc dự án
 
 url-file-security-scanner/
+
 ├── app.py                  # Code chính Flask
+
 ├── scans.db                # Database SQLite (tự tạo khi chạy lần đầu)
+
 ├── uploads/                # Thư mục tạm lưu file upload (tự xóa sau scan)
+
 ├── templates/
+
 │   ├── index.html          # Trang chính (scan URL/file)
+
 │   └── history.html        # Trang lịch sử scan
+
 ├── .gitignore
+
 └── README.md               # Tài liệu này
 
 *Lưu ý khi sử dụng
