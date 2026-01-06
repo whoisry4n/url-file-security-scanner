@@ -37,15 +37,15 @@ Dự án được xây dựng bằng **Python + Flask**, giao diện dark theme 
    ```bash
    pipinstall flask requests werkzeug
 3. **Lấy API key từ VirusTotal**
-   # Đăng ký tài khoản miễn phí tại: https://www.virustotal.com/gui/join-us
-   # Vào phần My API key để copy key.
+   - Đăng ký tài khoản miễn phí tại: https://www.virustotal.com/gui/join-us
+   - Vào phần My API key để copy key.
 4. **Cấu hình API key**
-   # Mở file app.py, tìm dòng:PythonVIRUSTOTAL_API_KEY = 'YOUR_API_KEY_HERE'Thay 'YOUR_API_KEY_HERE' bằng API key thật của bạn.
+   - Mở file app.py, tìm dòng:PythonVIRUSTOTAL_API_KEY = 'YOUR_API_KEY_HERE'Thay 'YOUR_API_KEY_HERE' bằng API key thật của bạn.
 5. **Chạy ứng dụng**
    ```bash
    python app.py
 7. **Truy cập**
-   # Mở trình duyệt và vào địa chỉ: http://127.0.0.1:5000
+   - Mở trình duyệt và vào địa chỉ: http://127.0.0.1:5000
 
 ## Cấu trúc dự án
 url-file-security-scanner/
@@ -60,14 +60,14 @@ url-file-security-scanner/
 
 ## Lưu ý khi sử dụng
 
-API key miễn phí của VirusTotal giới hạn ~500 request/ngày và 4 request/phút đối với scan file.
-Kích thước file upload tối đa 32MB (giới hạn của API public).
-Ứng dụng chạy local nên hoàn toàn riêng tư và an toàn.
+- API key miễn phí của VirusTotal giới hạn ~500 request/ngày và 4 request/phút đối với scan file.
+- Kích thước file upload tối đa 32MB (giới hạn của API public).
+- Ứng dụng chạy local nên hoàn toàn riêng tư và an toàn.
 
 ## Tác giả
 
-Nhóm SV an ninh mạng.
-Dự án thực hiện theo yêu cầu môn học CS-447.
+- Nhóm SV an ninh mạng.
+- Dự án thực hiện theo yêu cầu môn học CS-447.
 
 ## License
 Dự án sử dụng MIT License – bạn được tự do sử dụng, chỉnh sửa và chia sẻ.
