@@ -41,7 +41,7 @@ Dự án được xây dựng bằng **Python + Flask**, giao diện dễ nhìn 
    - Đăng ký tài khoản miễn phí tại: https://www.virustotal.com/gui/join-us
    - Vào phần My API key để copy key.
 4. **Cấu hình API key**
-   - Mở file app.py, tìm dòng:PythonVIRUSTOTAL_API_KEY = 'YOUR_API_KEY_HERE'Thay 'YOUR_API_KEY_HERE' bằng API key thật của bạn.
+   - Mở file app.py, tìm dòng: VIRUSTOTAL_API_KEY = 'YOUR_API_KEY_HERE'Thay 'YOUR_API_KEY_HERE' bằng API key thật của bạn.
 5. **Chạy ứng dụng**
    ```bash
    python app.py
